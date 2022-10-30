@@ -55,7 +55,9 @@ public class Email {
     }
 
     public boolean contains(String keyword) {
-        return value.toLowerCase().contains(keyword);
+        return value.equals(INFO_NOT_AVAILABLE)
+                ? false
+                : value.toLowerCase().contains(keyword);
     }
 
     @Override
