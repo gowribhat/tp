@@ -33,9 +33,15 @@ public class Phone {
      * Returns true if a given string is a valid phone number.
      */
     public static boolean isValidPhone(String test) {
-        return test.equals(INFO_NOT_AVAILABLE) || test.matches(VALIDATION_REGEX);
+        return test.isBlank() || test.matches(VALIDATION_REGEX);
     }
 
+    /**
+     * Returns true if keyword in present in the phone.
+     *
+     * @param keyword
+     * @return whether keyword is present is the phone
+     */
     public boolean contains(String keyword) {
         return value.equals(INFO_NOT_AVAILABLE)
                 ? false

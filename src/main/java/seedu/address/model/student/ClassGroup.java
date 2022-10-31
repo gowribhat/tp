@@ -22,6 +22,12 @@ public class ClassGroup {
         this.value = classGroup;
     }
 
+    /**
+     * Returns true if keyword in present in the class group.
+     *
+     * @param keyword
+     * @return whether keyword is present is the class group
+     */
     public boolean contains(String keyword) {
         return value.equals(INFO_NOT_AVAILABLE)
                 ? false

@@ -147,8 +147,8 @@ public class AddCommandParserTest {
         // Only name and Student ID
         Student expectedStudentOne = new StudentBuilder()
                 .withStudentId(VALID_STUDENTID_BOB).withName(VALID_NAME_BOB)
-                .withPhone(INFO_NOT_AVAILABLE).withEmail(INFO_NOT_AVAILABLE)
-                .withClassGroup(INFO_NOT_AVAILABLE).build();
+                .withPhone("").withEmail("")
+                .withClassGroup("").build();
         assertParseSuccess(parser, NAME_DESC_BOB + STUDENTID_DESC_BOB, new AddCommand(expectedStudentOne));
 
         // No Phone Number

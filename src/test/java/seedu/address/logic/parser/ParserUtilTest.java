@@ -117,26 +117,26 @@ public class ParserUtilTest {
     }
 
     @Test
-    public void parseAddress_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> ParserUtil.parseAddress(null));
+    public void parseStudentId_null_throwsNullPointerException() {
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseStudentId(null));
     }
 
     @Test
-    public void parseAddress_invalidValue_throwsParseException() {
-        assertThrows(ParseException.class, () -> ParserUtil.parseAddress(INVALID_STUDENTID));
+    public void parseStudentId_invalidValue_throwsParseException() {
+        assertThrows(ParseException.class, () -> ParserUtil.parseStudentId(INVALID_STUDENTID));
     }
 
     @Test
-    public void parseAddress_validValueWithoutWhitespace_returnsAddress() throws Exception {
+    public void parseStudentId_validValueWithoutWhitespace_returnsStudentId() throws Exception {
         StudentId expectedStudentId = new StudentId(VALID_STUDENTID);
-        assertEquals(expectedStudentId, ParserUtil.parseAddress(VALID_STUDENTID));
+        assertEquals(expectedStudentId, ParserUtil.parseStudentId(VALID_STUDENTID));
     }
 
     @Test
-    public void parseAddress_validValueWithWhitespace_returnsTrimmedAddress() throws Exception {
-        String addressWithWhitespace = WHITESPACE + VALID_STUDENTID + WHITESPACE;
+    public void parseStudentId_validValueWithWhitespace_returnsTrimmedStudentId() throws Exception {
+        String studentIdWithWhitespace = WHITESPACE + VALID_STUDENTID + WHITESPACE;
         StudentId expectedStudentId = new StudentId(VALID_STUDENTID);
-        assertEquals(expectedStudentId, ParserUtil.parseAddress(addressWithWhitespace));
+        assertEquals(expectedStudentId, ParserUtil.parseStudentId(studentIdWithWhitespace));
     }
 
     @Test

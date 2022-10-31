@@ -51,9 +51,15 @@ public class Email {
      * Returns if a given string is a valid email.
      */
     public static boolean isValidEmail(String test) {
-        return test.equals(INFO_NOT_AVAILABLE) || test.matches(VALIDATION_REGEX);
+        return test.isBlank() || test.matches(VALIDATION_REGEX);
     }
 
+    /**
+     * Returns true if keyword in present in the email.
+     *
+     * @param keyword
+     * @return whether keyword is present is the email
+     */
     public boolean contains(String keyword) {
         return value.equals(INFO_NOT_AVAILABLE)
                 ? false
